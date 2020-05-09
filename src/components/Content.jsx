@@ -5,7 +5,9 @@ import { Switch, Route } from 'react-router-dom';
 
 export default props => (
     <Container fluid className={classNames('content', {'is-open': props.isOpen})}>
-        <Button  onClick={props.toggle}/>
+        <div> 
+            <Button  onClick={props.toggle}/>
+        </div>
         <Switch>
             <Route exact path="/" component={() => "Home_Page" } />
             <Route exact path="/MissionList" component={() => "Mission_List" } />
