@@ -18,5 +18,7 @@ import classNames from 'classnames'
 import { instanceOf } from 'prop-types';
 
 export default props => (
+    <Container fluid className={classNames('content', {'is-open': props.isOpen})}>
 
+     </Container>
 )
