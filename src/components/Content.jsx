@@ -1,0 +1,14 @@
+import React from 'react';
+import classNames from 'classnames';
+import { Container,Button, Navb } from 'reactstrap';
+import { Switch, Route } from 'react-router-dom';
+
+export default props => (
+    <Container fluid className={classNames('content', {'is-open': props.isOpen})}>
+        <Button  onClick={props.toggle}/>
+        <Switch>
+            <Route exact path="/" component={() => "Home_Page" } />
+            <Route exact path="/MissionList" component={() => "Mission_List" } />
+        </Switch>
+    </Container>
+)
