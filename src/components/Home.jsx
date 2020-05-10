@@ -17,8 +17,11 @@ import {
 import classNames from 'classnames'
 import { instanceOf } from 'prop-types';
 
-export default props => (
-    <Container fluid className={classNames('content', {'is-open': props.isOpen})}>
+export default class Home extends React.Component {
 
-     </Container>
-)
+    render(){
+        return(
+            <div> Home_page</div>
+        )
+    }
+}
