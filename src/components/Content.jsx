@@ -11,6 +11,7 @@ export default class Content extends React.Component {
     static propTypes = {
         toggle: PropTypes.func,
         isOpen: PropTypes.bool,
+        Pagefunc: PropTypes.func,
         page: PropTypes.string
     };
 
@@ -23,7 +24,7 @@ export default class Content extends React.Component {
     }
 
     render(){
-        const{ toggle, isOpen, page} = this.props;
+        const{ toggle, isOpen, page, Pagefunc} = this.props;
         return(
             <Container fluid className={classNames('content', {'is-open': isOpen})}>
                 <div className="d-flex"> 
@@ -31,12 +32,18 @@ export default class Content extends React.Component {
                     <div className="mx-auto">{page}</div>
                 </div>
                 <Route exact path="/" render={() => (
-                            <Home />
+                            <Home page={this.ChangeTopic('首頁')} />
                         )} />
                 <Route exact path="/MissionList" render={() => (
-                            <MissionList />
+                            <MissionList page={this.ChangeTopic('每日任務列表')}/>
                         )} />
             </Container>
         )
+    }
+
+    ChangeTopic(unit) {
+        if (this.props.page !== unit) {
+            this.props.Pagefunc(unit);
+        }
     }
 }

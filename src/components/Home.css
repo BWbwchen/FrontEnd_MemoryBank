@@ -1,0 +1,11 @@
+.image{
+    width: 6.5rem;
+    height: 5rem;
+    display: block;
+    margin: 1.5rem auto 
+}
+
+.info{
+    display: block;
+    text-align: center;
+}

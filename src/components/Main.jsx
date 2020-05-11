@@ -17,6 +17,8 @@ export default class Main extends React.Component {
             page:'首頁'
         };
         this.handleNavbarToggle = this.handleNavbarToggle.bind(this);
+        this.handleTopic = this.handleTopic.bind(this);
+
     }
 
     render(){
@@ -24,7 +26,7 @@ export default class Main extends React.Component {
             <Router>
                 <div className="main">
                     <SideBar toggle={this.handleNavbarToggle} isOpen={this.state.navbarToggle}/>
-                    <Content toggle={this.handleNavbarToggle} isOpen={this.state.navbarToggle} page={this.state.page}/>
+                    <Content toggle={this.handleNavbarToggle} isOpen={this.state.navbarToggle} Pagefunc={this.handleTopic} page={this.state.page}/>
                 </div>
             </Router>
             );
@@ -36,5 +38,10 @@ export default class Main extends React.Component {
         }));
     }
 
+    handleTopic(topic){
+        this.setState({
+            page: topic
+        });
+    }
 }
 
