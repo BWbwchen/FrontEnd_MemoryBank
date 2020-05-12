@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {
     BrowserRouter as Router,
 } from 'react-router-dom'
-import Home from 'components/Home.jsx';
 import SideBar from 'components/SideBar.jsx';
 import Content from 'components/Content.jsx';
 import './Main.css';
@@ -14,11 +13,8 @@ export default class Main extends React.Component {
 
         this.state = {
             navbarToggle: false,
-            page:'首頁'
         };
-        this.handleNavbarToggle = this.handleNavbarToggle.bind(this);
-        this.handleTopic = this.handleTopic.bind(this);
-
+        this.handleNavbarToggle = this.handleNavbarToggle.bind(this,false);
     }
 
     render(){
@@ -26,7 +22,7 @@ export default class Main extends React.Component {
             <Router>
                 <div className="main">
                     <SideBar toggle={this.handleNavbarToggle} isOpen={this.state.navbarToggle}/>
-                    <Content toggle={this.handleNavbarToggle} isOpen={this.state.navbarToggle} Pagefunc={this.handleTopic} page={this.state.page}/>
+                    <Content toggle={this.handleNavbarToggle} isOpen={this.state.navbarToggle}/>
                 </div>
             </Router>
             );
@@ -38,10 +34,5 @@ export default class Main extends React.Component {
         }));
     }
 
-    handleTopic(topic){
-        this.setState({
-            page: topic
-        });
-    }
 }
 

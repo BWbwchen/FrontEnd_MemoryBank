@@ -4,17 +4,19 @@
     align-items: stretch;
     background: rgb(67,70,75);
     color: white;
+
 }
 
 
 .sidebar {
-    min-width: 200px;
-    max-width: 200px;
-    background: rgb(91,92,93);
-    color: #fff;
-    margin-left: -200px;
-    transition: all 0.5s;
-  }
+  position: relative;
+  min-width: 200px;
+  max-width: 200px;
+  background: rgb(91,92,93);
+  color: #fff;
+  margin-left: -200px;
+  transition: all 0.5s;
+}
 
 .sidebar.is-open {
     margin-left: 0;

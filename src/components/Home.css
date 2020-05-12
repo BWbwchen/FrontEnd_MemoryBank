@@ -1,5 +1,5 @@
 .image{
-    width: 6.5rem;
+    width: 5.5rem;
     height: 5rem;
     display: block;
     margin: 1.5rem auto 
@@ -8,4 +8,21 @@
 .info{
     display: block;
     text-align: center;
+}
+
+.number{
+    margin: 0 0.5rem;
+    text-align: center;
+}
+
+.vert-r{
+    border-right: solid 0.1rem rgba(255, 255, 255);
+}
+
+.vert-l{
+    border-left: solid 0.1rem rgba(255, 255, 255);
+}
+
+.btn{
+    max-width: 390px;
 }
