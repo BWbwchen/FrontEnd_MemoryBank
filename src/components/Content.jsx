@@ -26,7 +26,6 @@ export default class Content extends React.Component {
                         <i className="fa fa-align-left" aria-hidden="true"></i>
                         </Button>
                     </div>
-
                 </div>
                 <Route exact path="/" render={() => (
                             <Home/>
