@@ -4,7 +4,12 @@ import classNames from 'classnames';
 import { Container,Button } from 'reactstrap';
 import { Route } from 'react-router-dom';
 import Home from 'components/Home.jsx';
-import MissionList from 'components/MissionList.jsx';
+import Intro from 'components/intro.jsx';
+import Create from 'components/Create.jsx';
+import Rule from 'components/Rule.jsx';
+import Visa from 'components/visa.jsx';
+import TopicSelect from 'components/TopicSelect.jsx'
+import Date from 'components/Date.jsx'
 
 export default class Content extends React.Component {
     static propTypes = {
@@ -19,7 +24,7 @@ export default class Content extends React.Component {
     render(){
         const{ toggle, isOpen} = this.props;
         return(
-            <Container fluid className={classNames('content', {'is-open': isOpen})}>
+            <div className={classNames('content', {'is-open': isOpen})}>
                 <div className="d-flex "> 
                     <div style={{position:"fixed"}}>
                         <Button color="link" style={{color: '#FF6347'}} onClick={toggle}>
@@ -30,10 +35,25 @@ export default class Content extends React.Component {
                 <Route exact path="/" render={() => (
                             <Home/>
                         )} />
-                <Route exact path="/MissionList" render={() => (
-                            <MissionList/>
+                <Route exact path="/intro" render={() => (
+                            <Intro/>
                         )} />
-            </Container>
+                <Route exact path="/Create" render={() => (
+                    <Create/>
+                        )} />
+                <Route exact path="/Rule" render={() => (
+                    <Rule/>
+                        )} />
+                <Route exact path="/visa" render={() => (
+                    <Visa/>
+                )} />
+                <Route exact path="/topicselect" render={() => (
+                    <TopicSelect/>
+                )} />
+                <Route exact path="/date" render={() => (
+                    <Date/>
+                )} />
+            </div>
         )
     }
 }

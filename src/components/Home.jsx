@@ -41,8 +41,8 @@ export default class Home extends React.Component {
         ];
 
         return(
-            <div> 
-                <div className="text-center my-2">首頁</div>
+            <div style={{background:'#414141'}}> 
+                <div className="text-center my-2" >首頁</div>
                 <img className="image" src={`images/${this.state.gender}.png`}/>
                 <div className="info" style={{margin:'0 0 1rem 0'}}>
                     <h4>Me</h4>
@@ -76,6 +76,7 @@ export default class Home extends React.Component {
                         <h6>開始今日任務</h6>
                     </Button>
                 </Link>
+
             </div>
         )
     }

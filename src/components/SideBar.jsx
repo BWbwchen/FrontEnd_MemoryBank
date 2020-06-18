@@ -16,11 +16,11 @@ const SideBar = props => (
       <div className="side-menu">
         <Nav vertical className="list-unstyled pb-3">
           <NavItem>
-            <NavLink tag={Link} to='/' style={{color: '#fff'}}>Home Page</NavLink>
+            <NavLink tag={Link} to='/' style={{color: '#fff'}}>首頁</NavLink>
           </NavItem> 
           <NavItem>
-            <NavLink tag={Link} to='/MissionList' style={{color: '#fff'}}>Mission List</NavLink>
-          </NavItem>
+            <NavLink tag={Link} to='/intro' style={{color: '#fff'}}>錢包</NavLink>
+          </NavItem>          
         </Nav>        
       </div>
     </div>
