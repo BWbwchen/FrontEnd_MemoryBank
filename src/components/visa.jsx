@@ -5,7 +5,7 @@ import {
     Link
 } from 'react-router-dom'
 import {Button, Container} from 'reactstrap';
-
+import './visa.css';
 
 export default class Visa extends React.Component {
 
@@ -24,41 +24,41 @@ export default class Visa extends React.Component {
                     <i className="fa fa-arrow-left"></i>
                     </Button>
                 </Link>
-
-                <label htmlFor="fname">Accepted Cards</label>
-                <div className="icon-container">
-                    <i className="fa fa-cc-visa" ></i>
-                    <i className="fa fa-cc-amex" ></i>
-                    <i className="fa fa-cc-mastercard"></i>
-                    <i className="fa fa-cc-discover"></i>
-                </div>
-                <label htmlFor="cname">Name on Card</label>
-                <input type="text" id="cname" name="cardname" placeholder="John More Doe"/>
-                <label htmlFor="ccnum">Credit card number</label>
-                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"/>
-                <label htmlFor="expmonth">Exp Month</label>
-                <input type="text" id="expmonth" name="expmonth" placeholder="September"/>
-                <div className="row">
-                    <div className="col-50">
-                        <label htmlFor="expyear">Exp Year</label>
-                        <input type="text" id="expyear" name="expyear" placeholder="2018"/>
+                <div className="mx-5">
+                    <div className="icon-container">
+                        <i className="fa fa-cc-visa fa-3x" style={{color:'navy'}} >&nbsp;</i>
+                        <i className="fa fa-cc-paypal  fa-3x" style={{color:'blue'}}>&nbsp;</i>
+                        <i className="hide fa fa-cc-mastercard fa-3x" style={{color:'red'}}>&nbsp;</i>
+                        <i className="hide fa fa-cc-discover fa-3x" style={{color:'orange'}}>&nbsp;</i>
                     </div>
-                    <div className="col-50">
-                        <label htmlFor="cvv">CVV</label>
-                        <input type="text" id="cvv" name="cvv" placeholder="352"/>
+                    <div className="form">
+                        <div className="card space">
+                            <div className="label">CARDHOLDER NAME</div>
+                            <input type="text" className="input" placeholder="John More Doe"/>
+                        </div>
+                        <div className="card space">
+                            <div className="label">CARD NUMBER</div>
+                            <input type="text" className="input"  placeholder="1111-2222-3333-4444"/>
+                        </div>
+                        <div className="card-grp space">
+                            <div className="card-item">
+                                <div className="label">EXPIRE DATE</div>
+                                <input type="text" name="expiry-data" className="input"  placeholder="05 / 21"/>
+                            </div>
+                            <div className="card-item">
+                                <div className="label">CVV</div>
+                                <input type="text" className="input"  placeholder="123"/>
+                            </div>
+                        </div>
                     </div>
+                    <div><input type="checkbox" name="Save" value="Save"/>&nbsp;SAVE CARD</div>
                 </div>
-
-
                 <Link className="d-flex my-2 mx-auto btn" to="/topicselect"> 
-                    <Button style={{backgroundColor: '#FF6347'}} block >
-                        <h6>下一步</h6>
-                    </Button>
+                        <Button style={{backgroundColor: '#FF6347'}} block >
+                            <h6>下一步</h6>
+                        </Button>
                 </Link>
-
             </div>
         )
     }
 }
-
-// https://www.w3schools.com/howto/howto_css_checkout_form.asp

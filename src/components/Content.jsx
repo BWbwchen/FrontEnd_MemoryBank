@@ -24,7 +24,7 @@ export default class Content extends React.Component {
     render(){
         const{ toggle, isOpen} = this.props;
         return(
-            <div className={classNames('content', {'is-open': isOpen})}>
+            <Container className={classNames('content', {'is-open': isOpen})}>
                 <div className="d-flex "> 
                     <div style={{position:"fixed"}}>
                         <Button color="link" style={{color: '#FF6347'}} onClick={toggle}>
@@ -53,7 +53,7 @@ export default class Content extends React.Component {
                 <Route exact path="/date" render={() => (
                     <Date/>
                 )} />
-            </div>
+            </Container>
         )
     }
 }

@@ -17,6 +17,7 @@ export default class Rule extends React.Component {
     }
     
     render(){
+
         return(
             <div className="my-5">
             <Link  to="/topicselect"> 
@@ -26,6 +27,10 @@ export default class Rule extends React.Component {
             </Link>
             <Container style={{margin:'2rem 0 5rem 0', color:'black'}}>
                 <h1 className="my-2" style={{overflow:'hidden'}}> 完成背誦單字日期</h1>
+                <div className="date">
+                    <p>Dates</p>
+                    <input type="date" id="myDate"  min="2017-04-01" max="2017-04-20" required/>
+                </div>
 
             </Container>
             <Link className="d-flex my-2 mx-auto btn" to="/"> 
