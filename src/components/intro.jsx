@@ -5,6 +5,7 @@ import {
     Link
 } from 'react-router-dom'
 import {Button} from 'reactstrap';
+import { Helmet } from 'react-helmet';
 
 
 export default class Intro extends React.Component {
@@ -20,14 +21,16 @@ export default class Intro extends React.Component {
 
     render(){
         return(
-            <div className="text-center" style={{background:'#414141'}}>
+
+            <div className="text-center">
+                <Helmet bodyAttributes={{style: 'background-color :#414141'}}/>
                 <div className="my-2">錢包</div>
                 <div className="container py-5">
                     <h1 className="my-5" style={{overflow:'hidden'}}> Memory Bank </h1>
                     <h6 className="py-5">{this.state.intro}</h6>
                 </div>
                 <Link className="d-flex my-2 mx-auto btn" to="/Create"> 
-                    <Button style={{backgroundColor: '#FF6347'}} block >
+                    <Button style={{backgroundColor: '#FF6347',border:'none'}} block >
                         <h6>開始使用</h6>
                     </Button>
                 </Link>

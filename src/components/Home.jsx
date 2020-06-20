@@ -6,9 +6,11 @@ import {
     Link
 } from 'react-router-dom'
 import {Button} from 'reactstrap';
+import {Helmet} from 'react-helmet';
 import {
   BarChart, Bar, XAxis, CartesianGrid
 } from 'recharts';
+import { createGlobalStyle } from 'styled-components'
 import './Home.css';
 
 
@@ -41,7 +43,8 @@ export default class Home extends React.Component {
         ];
 
         return(
-            <div style={{background:'#414141'}}> 
+            <div> 
+                <Helmet bodyAttributes={{style: 'background-color :#414141'}}/>
                 <div className="text-center my-2" >首頁</div>
                 <img className="image" src={`images/${this.state.gender}.png`}/>
                 <div className="info" style={{margin:'0 0 1rem 0'}}>
@@ -72,7 +75,7 @@ export default class Home extends React.Component {
                 </div>
 
                 <Link className="d-flex my-2 mx-auto btn" to="/MissionList"> 
-                    <Button style={{backgroundColor: '#FF6347'}} block onClick={this.handleClick}>
+                    <Button style={{backgroundColor: '#FF6347',border:'none'}} block onClick={this.handleClick}>
                         <h6>開始今日任務</h6>
                     </Button>
                 </Link>

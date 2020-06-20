@@ -5,7 +5,7 @@ import {
     Container,
     Button 
 } from "reactstrap";
-
+import {Helmet} from "react-helmet";
 import {
     BrowserRouter as Router,
     Route,
@@ -13,11 +13,18 @@ import {
 } from 'react-router-dom'
 
 
+
 function validate(email=[], password=[], password_c=[], name=[]) {
+
+  if(password_c.length === 0 || password !=password_c){
+    var notpass = true
+  }else{
+    notpass = false
+  }
   return {
     name: name.length === 0,
     email: email.length === 0,
-    password_c: password_c.length === 0,
+    password_c: notpass,
     password: password.length === 0,
   };
 }
@@ -30,7 +37,7 @@ export default class Create extends React.Component {
         email: "",
         password: "",
         password_c:"",
-
+        warn:"",
         touched: {
             name: false,
             email: false,
@@ -39,6 +46,7 @@ export default class Create extends React.Component {
         }
     };
   }
+
 
   handleEmailChange = evt => {
     this.setState({ email: evt.target.value });
@@ -50,6 +58,11 @@ export default class Create extends React.Component {
 
   handlepasswordcChange = evt => {
     this.setState({ password_c: evt.target.value });
+    if(evt.target.value !=this.state.password){
+      this.state.warn = "Passwords don't match";
+    }else{
+      this.state.warn = "";
+    }
   };
 
   handlePasswordChange = evt => {
@@ -62,34 +75,21 @@ export default class Create extends React.Component {
     });
   };
 
-  handleSubmit = evt => {
-    if (!this.canBeSubmitted()) {
-      evt.preventDefault();
-      return;
-    }
-    console.log(this.state.email)
-  };
-
-  canBeSubmitted() {
-    const errors = validate(this.state.email, this.state.password);
-    const isDisabled = Object.keys(errors).some(x => errors[x]);
-    return !isDisabled;
-  }
 
   render() {
     const errors = validate(this.state.email, this.state.password, this.state.password_c, this.state.name);
     const isDisabled = Object.keys(errors).some(x => errors[x]);
-
     const shouldMarkError = field => {
-      const hasError = errors[field];
+      var hasError = errors[field];
       const shouldShow = this.state.touched[field];
-
       return hasError ? shouldShow : false;
     };
 
     return (
 
-        <form onSubmit={this.handleSubmit}> 
+        <form > 
+            <Helmet bodyAttributes={{style: 'background-color :#F0F0F0'}}/>
+
             <Container className="box search">
                 <div style={{position:"fixed"}}>
                     <Link  to="/intro"> 
@@ -123,11 +123,15 @@ export default class Create extends React.Component {
                 onChange={this.handlepasswordcChange}
                 onBlur={this.handleBlur("password_c")}
                 />
+                <p style={{color:'red',textAlign:'left'}}>{this.state.warn}</p>
                 <p className="remarks">By creating an account you agree to our Terms of Service and Privacy Policy</p>
             </Container>
             <Link className="d-flex my-2 mx-auto btn" to="/Rule"> 
-                <button disabled={isDisabled}>下一步</button>
+                <Button disabled={isDisabled} style={{backgroundColor: '#FF6347',border:'none'}} block >
+                    下一步
+                </Button>
             </Link>
+
         </form>
     );
   }
