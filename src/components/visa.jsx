@@ -89,13 +89,14 @@ export default class Visa extends React.Component {
                     </Button>
                 </Link>
                 <div className="mx-5" >
-                    <div className="icon-container">
+                    <h3>Payment Detail</h3>
+                    <div className="icon-container" >
                         <i className="fa fa-cc-visa fa-3x" style={{color:'navy'}} >&nbsp;</i>
                         <i className="fa fa-cc-paypal  fa-3x" style={{color:'blue'}}>&nbsp;</i>
                         <i className="hide fa fa-cc-mastercard fa-3x" style={{color:'red'}}>&nbsp;</i>
                         <i className="hide fa fa-cc-discover fa-3x" style={{color:'orange'}}>&nbsp;</i>
                     </div>
-                    <div className="form" onSubmit={this.handleSubmit}>
+                    <div className="form my-2" onSubmit={this.handleSubmit}>
                         <div className="card space">
                             <div className="label">CARDHOLDER NAME</div>
                             <input type="text" className="input" onChange={this.handleNameChange} placeholder="John More Doe" />

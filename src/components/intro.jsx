@@ -24,9 +24,10 @@ export default class Intro extends React.Component {
 
             <div className="text-center">
                 <Helmet bodyAttributes={{style: 'background-color :#414141'}}/>
-                <div className="my-2">錢包</div>
+                <div className="my-2"></div>
                 <div className="container py-5">
-                    <h1 className="my-5" style={{overflow:'hidden'}}> Memory Bank </h1>
+                    <h1  style={{overflow:'hidden', fontFamily:'Love Ya Like A Sister, cursive' ,fontSize:'70px'}}> Memory  </h1>
+                    <h1  style={{overflow:'hidden', fontFamily:'Love Ya Like A Sister, cursive' ,fontSize:'70px'}}> Bank  </h1>
                     <h6 className="py-5">{this.state.intro}</h6>
                 </div>
                 <Link className="d-flex my-2 mx-auto btn" to="/Create"> 

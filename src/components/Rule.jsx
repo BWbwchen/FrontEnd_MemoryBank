@@ -30,7 +30,7 @@ export default class Rule extends React.Component {
                     </Button>
                 </Link>
                 <Container style={{margin:'2rem 0 5rem 0', color:'black'}}>
-                    <h1 className="my-2" style={{overflow:'hidden'}}> 規則 </h1>
+                    <h1 className="my-2" style={{overflow:'hidden',fontFamily:'Love Ya Like A Sister, cursive' ,fontSize:'70px'}}> Rule </h1>
                     <h6 className="py-3">{this.state.intro}</h6>
                     <h6>{this.state.intro2}</h6>
                 </Container>

@@ -22,9 +22,9 @@ export default class Home extends React.Component {
         this.state = {
             intro: "Hi! My name is John, I'm a creative geek from San Francisco, CA. Contact me at john@mail.com",
             gender:"woman", // or man
-            schedule: 0,
+            schedule: 2345,
             money: 100,
-            count: 0,
+            count: 6789,
             isTrigger: true,
         };
         this.handleClick = this.handleClick.bind(this);
@@ -54,15 +54,15 @@ export default class Home extends React.Component {
                 <p className="info">{this.state.intro}</p>
                 <div className="my-4 d-flex justify-content-center text-center">
                     <div className="px-3 my-3 vert-r"> 
-                        <h3 >{this.state.schedule}%</h3>
+                        <h3 style={{fontFamily:'Waiting for the Sunrise, cursive'}}>{this.state.schedule}%</h3>
                         <h6>本周完成進度</h6>
                     </div>
                     <div className="px-3">
-                        <h1>${this.state.money}</h1>
+                        <h1 style={{fontFamily:'Waiting for the Sunrise, cursive'}}>$&nbsp;{this.state.money}</h1>
                         <h6>錢包金額</h6>
                     </div>
                     <div className="px-3 my-3 vert-l">
-                        <h3>{this.state.count}</h3>
+                        <h3 style={{fontFamily:'Waiting for the Sunrise, cursive'}}>{this.state.count}</h3>
                         <h6> 記憶單字數</h6>
                     </div>
                 </div>

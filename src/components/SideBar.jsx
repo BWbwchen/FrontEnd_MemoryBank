@@ -19,7 +19,7 @@ const SideBar = props => (
             <NavLink tag={Link} to='/' style={{color: '#fff'}}>首頁</NavLink>
           </NavItem> 
           <NavItem>
-            <NavLink tag={Link} to='/intro' style={{color: '#fff'}}>錢包</NavLink>
+            <NavLink tag={Link} to='/intro' style={{color: '#fff'}}>註冊</NavLink>
           </NavItem>          
         </Nav>        
       </div>

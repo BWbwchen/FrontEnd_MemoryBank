@@ -98,7 +98,7 @@ export default class Create extends React.Component {
                         </Button>
                     </Link>
                 </div>
-                <h2 className="title">創建帳號</h2>
+                <h2 className="title">註冊</h2>
                 <input
                 className={shouldMarkError("name") ? "error" : ""}
                 type="text" placeholder="Full name" value={this.state.name}

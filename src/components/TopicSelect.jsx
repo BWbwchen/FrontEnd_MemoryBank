@@ -35,7 +35,7 @@ export default class TopicSelect extends React.Component {
                 </Button>
             </Link>
             <Container className="text-center" style={{margin:'2rem 0', color:'black'}}>
-                <h1 className="my-2" style={{overflow:'hidden'}}> 選擇目標 </h1>
+                <h1 className="my-2" style={{overflow:'hidden'}}> 目標 </h1>
                 <div className="d-flex align-items-center flex-column-reverse ">
                     <Button className={`select-${this.state.toeic}`} onClick={this.toeic_handleClick} >TOEIC 多益</Button>
                     <Button className={`select-${this.state.toefl}`} onClick={this.toefl_handleClick} >TOEFL 托福</Button>
