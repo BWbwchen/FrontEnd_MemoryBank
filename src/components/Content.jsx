@@ -17,7 +17,6 @@ import Date from 'components/Date.jsx'
 export default class Content extends React.Component {
     static propTypes = {
         toggle: PropTypes.func,
-        isOpen: PropTypes.bool,
     };
 
     constructor(props) {
@@ -25,13 +24,13 @@ export default class Content extends React.Component {
     }
 
     render(){
-        const{ toggle, isOpen} = this.props;
+        const{ toggle} = this.props;
         const style = {
             paddingRight: '0px',
             paddingLeft: '0px'
           };
         return(
-            <Container className={classNames('content', {'is-open': isOpen})}>
+            <Container className={`content ${this.props.page}`}>
                 <div className="d-flex "> 
                     <div style={{position:"fixed"}}>
                         <Button color="link" style={{color: '#FF6347'}} onClick={toggle}>
@@ -46,7 +45,7 @@ export default class Content extends React.Component {
                             <Intro/>
                         )} />
                 <Route exact path="/MissionList" render={() => (
-                            <MissionList />
+                            <MissionList handle_P={this.props.handle_P}/>
                         )} />
                 <Route exact path="/Reviewing" render={() => (
                             <Review />

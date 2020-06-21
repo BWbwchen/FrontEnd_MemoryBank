@@ -129,3 +129,13 @@ fill: none;
     background: #584f60;
 }
 
+div.content.mission{
+    padding: 0
+}
+
+div.container.mission{
+    padding-right: 0;
+    padding-left: 0; 
+    margin-right: 0; 
+    margin-left: 0;
+} 
