@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom';
 import Home from 'components/Home.jsx';
 import MissionList from 'components/MissionList.jsx';
 import Review from 'components/Review.jsx';
+import Challenge from 'components/Challenge/Challenge.jsx';
 import "./Content.css"
 
 export default class Content extends React.Component {
@@ -41,6 +42,9 @@ export default class Content extends React.Component {
                         )} />
                 <Route exact path="/Reviewing" render={() => (
                             <Review />
+                        )} />
+                <Route exact path="/Challenging" render={() => (
+                            <Challenge />
                         )} />
             </Container>
         )
