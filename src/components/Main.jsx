@@ -21,7 +21,7 @@ export default class Main extends React.Component {
         return (
             <Router>
                 <div className="main">
-                    <SideBar toggle={this.handleNavbarToggle} isOpen={this.state.navbarToggle}/>
+                    <SideBar className="sidebar" toggle={this.handleNavbarToggle} isOpen={this.state.navbarToggle}/>
                     <Content toggle={this.handleNavbarToggle} isOpen={this.state.navbarToggle}/>
                 </div>
             </Router>

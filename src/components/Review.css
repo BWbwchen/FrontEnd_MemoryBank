@@ -1,0 +1,100 @@
+.review-block {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(50deg, #f3c680, hsla(179,54%,76%,1));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+}
+.wrap {
+  width: 800px;
+  height: 500px;
+  box-shadow: 0 20px 30px -5px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: absolute;
+  transform-style: preserve-3d;
+  background: linear-gradient(to bottom, #fff 50%, #e4e2e5 50%);
+  z-index: 1;
+}
+.trigger {
+  position: absolute;
+  width: 5%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  opacity: 1;
+  cursor: pointer;
+}
+.trigger:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #fff;
+  box-shadow: -1px 0 0 0 rgba(0, 0, 0, 0.015);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.trigger:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 0 20px 20px;
+  border-color: transparent transparent transparent #222;
+  top: calc(50% - 20px);
+  right: 8.5px;
+  transition: 0.2s ease-in-out;
+}
+.trigger:hover:before {
+  background: #222;
+}
+.trigger:hover:after {
+  border-color: transparent transparent transparent #fff;
+}
+.inner-wrap {
+  position: absolute;
+  width: 1300px;
+  height: 1300px;
+  left: -725px;
+  top: -400px;
+  /* z-index: 999; */
+  /* background-color: pink; */
+}
+.cards {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100px;
+  top: 0;
+  /* background-color: white; */
+  transition: 0.7s cubic-bezier(1, 0, 0, 1);
+}
+
+
+/* .cards {
+  transform: rotate(315deg);
+} */
+ /* .card-wrap:nth-of-type(1) {
+  transform: rotate(45deg);
+}
+.card-wrap:nth-of-type(1) .card_ {
+  transform: rotate(-360deg);
+}
+.card-wrap:nth-of-type(2) {
+  transform: rotate(90deg);
+}
+.card-wrap:nth-of-type(2) .card_ {
+  transform: rotate(-405deg);
+}
+.card-wrap:nth-of-type(3) {
+  transform: rotate(135deg);
+}
+.card-wrap:nth-of-type(3) .card_ {
+  transform: rotate(-450deg);
+} */

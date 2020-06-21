@@ -41,7 +41,7 @@ export default class Home extends React.Component {
         ];
 
         return(
-            <div> 
+            <div className="home"> 
                 <div className="text-center my-2">首頁</div>
                 <img className="image" src={`images/${this.state.gender}.png`}/>
                 <div className="info" style={{margin:'0 0 1rem 0'}}>

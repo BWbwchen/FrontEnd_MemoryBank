@@ -1,0 +1,44 @@
+.card-box {
+    cursor: pointer;
+    /* opacity: 52%; */
+} 
+.card-filter{
+    position: absolute;
+    width: 356px;
+    height: 207px;
+    background: black;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    margin-bottom: 10px;
+}
+.past-card-filter:hover{
+    opacity: 0;
+}
+.training-item {
+    display: block;
+    width: 356px;
+    height: 207px;
+    margin-top: 10px;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.6);
+    padding: 1rem 1rem 1rem 1rem;
+    opacity: 1;
+    background-size: 100%;
+    -webkit-transition: all 0.7s ease-in-out;
+}
+.training-item:hover {
+    background-size: 150%;
+}
+.training-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: white;
+}
+.complete-rate {
+    color: white;
+}

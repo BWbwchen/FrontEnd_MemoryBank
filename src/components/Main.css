@@ -1,9 +1,15 @@
+.home{
+  padding: 20px 0px 20px 0px;
+}
 .main {
     display:flex;
     width: 100%;
     align-items: stretch;
-    background: rgb(67,70,75);
-    color: white;
+    /* background: rgb(67,70,75); */
+    /* background: #3D3744; */
+    background: white;
+    color: rgb(67,70,75);;
+    font-family: 'helvetica neue','microsoft yahei','pingfang sc','hiragino sans gb','stheiti',tahoma,sans-serif;
 
 }
 
@@ -16,6 +22,7 @@
   color: #fff;
   margin-left: -200px;
   transition: all 0.5s;
+  z-index: 100;
 }
 
 .sidebar.is-open {
