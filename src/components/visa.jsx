@@ -118,8 +118,8 @@ export default class Visa extends React.Component {
                     </div>
                     <div><input type="checkbox" onChange={this.handleSaveChange}  />&nbsp;Skip</div>
                 </div>
-                <Link className="d-flex my-2 mx-auto btn" to="/topicselect"> 
-                        <Button disabled={isDisabled} style={{backgroundColor: '#FF6347',border:'none'}} block >
+                <Link className="d-flex my-2 mx-auto btn" style={{padding:'0', border:'none'}} to="/topicselect"> 
+                        <Button disabled={isDisabled} style={{backgroundColor: '#FF6347',border:'none',margin:'0', padding:'0'}} block >
                             下一步
                         </Button>
                 </Link>

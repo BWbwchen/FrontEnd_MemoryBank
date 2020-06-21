@@ -14,11 +14,26 @@ export default class Rule extends React.Component {
         super(props);
     
         this.state = {
+            button_disable:true,
         };
+        this.handleClick = this.handleClick.bind(this);
     }
+
     
     render(){
-
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();
+         if(dd<10){
+                dd='0'+dd
+            } 
+            if(mm<10){
+                mm='0'+mm
+            } 
+        
+        today = yyyy+'-'+mm+'-'+dd;
+        var lastday =  (yyyy+2) +'-'+mm+'-'+dd;
         return(
             <div className="my-5">
                 <Helmet bodyAttributes={{style: 'background-color :#F0F0F0'}}/>
@@ -32,17 +47,23 @@ export default class Rule extends React.Component {
                     <h1 className="my-2" style={{overflow:'hidden'}}> 完成背誦單字日期</h1>
                     <div className="date">
                         <p>Dates</p>
-                        <input type="date" id="myDate"  min="2017-04-01" max="2017-04-20" required/>
+                        <input onChange={this.handleClick} type="date" id="myDate"  min={today} max={lastday} required/>
                     </div>
 
                 </Container>
-                <Link className="d-flex my-2 mx-auto btn" to="/"> 
-                    <Button style={{backgroundColor: '#414141',border:'none'}}  >
-                        <h6>完成</h6>
+                <Link className="d-flex my-2 mx-auto btn" style={{padding:'0', border:'none'}}  to="/"> 
+                    <Button disabled={this.state.button_disable}  style={{backgroundColor: '#414141',border:'none',margin:'0', padding:'0'}}  >
+                        完成
                     </Button>
                 </Link>
 
             </div>
         )
+    }
+    handleClick(){
+        console.log('here')
+        this.setState(state => ({
+            button_disable:false,
+        }));
     }
 }

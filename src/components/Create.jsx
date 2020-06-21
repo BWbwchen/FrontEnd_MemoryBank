@@ -67,6 +67,11 @@ export default class Create extends React.Component {
 
   handlePasswordChange = evt => {
     this.setState({ password: evt.target.value });
+    if(evt.target.value !=this.state.password_c){
+      this.state.warn = "Passwords don't match";
+    }else{
+      this.state.warn = "";
+    }
   };
 
   handleBlur = field => evt => {
@@ -126,8 +131,8 @@ export default class Create extends React.Component {
                 <p style={{color:'red',textAlign:'left'}}>{this.state.warn}</p>
                 <p className="remarks">By creating an account you agree to our Terms of Service and Privacy Policy</p>
             </Container>
-            <Link className="d-flex my-2 mx-auto btn" to="/Rule"> 
-                <Button disabled={isDisabled} style={{backgroundColor: '#FF6347',border:'none'}} block >
+            <Link className="d-flex my-2 mx-auto btn" style={{padding:'0', border:'none'}} to="/Rule"> 
+                <Button disabled={isDisabled} style={{backgroundColor: '#FF6347',border:'none',margin:'0', padding:'0'}} block >
                     下一步
                 </Button>
             </Link>

@@ -42,8 +42,8 @@ export default class TopicSelect extends React.Component {
                     <Button className={`select-${this.state.ielts}`} onClick={this.ielts_handleClick} >IELTS 雅思</Button>
                 </div>
             </Container>
-            <Link className="d-flex my-2 mx-auto btn" to="/date"> 
-                <Button disabled={this.state.button_disable} style={{backgroundColor: '#FF6347',border:'none'}} block >
+            <Link className="d-flex my-2 mx-auto btn" style={{padding:'0', border:'none'}} to="/date"> 
+                <Button disabled={this.state.button_disable} style={{backgroundColor: '#FF6347',border:'none',margin:'0', padding:'0'}} block >
                     下一步
                 </Button>
             </Link>
