@@ -7,7 +7,12 @@ import Home from 'components/Home.jsx';
 import MissionList from 'components/MissionList.jsx';
 import Review from 'components/Review.jsx';
 import Challenge from 'components/Challenge/Challenge.jsx';
-import "./Content.css"
+import Intro from 'components/intro.jsx';
+import Create from 'components/Create.jsx';
+import Rule from 'components/Rule.jsx';
+import Visa from 'components/visa.jsx';
+import TopicSelect from 'components/TopicSelect.jsx'
+import Date from 'components/Date.jsx'
 
 export default class Content extends React.Component {
     static propTypes = {
@@ -26,9 +31,9 @@ export default class Content extends React.Component {
             paddingLeft: '0px'
           };
         return(
-            <Container fluid className={classNames('content_', {'is-open': isOpen})} style={style}>
-                <div className="d-flex"> 
-                    <div style={{position:"fixed"}} className="sidebar-icon">
+            <Container className={classNames('content', {'is-open': isOpen})}>
+                <div className="d-flex "> 
+                    <div style={{position:"fixed"}}>
                         <Button color="link" style={{color: '#FF6347'}} onClick={toggle}>
                         <i className="fa fa-align-left" aria-hidden="true"></i>
                         </Button>
@@ -37,8 +42,11 @@ export default class Content extends React.Component {
                 <Route exact path="/" render={() => (
                             <Home/>
                         )} />
+                <Route exact path="/intro" render={() => (
+                            <Intro/>
+                        )} />
                 <Route exact path="/MissionList" render={() => (
-                            <MissionList/>
+                            <MissionList />
                         )} />
                 <Route exact path="/Reviewing" render={() => (
                             <Review />
@@ -46,6 +54,21 @@ export default class Content extends React.Component {
                 <Route exact path="/Challenging" render={() => (
                             <Challenge />
                         )} />
+                <Route exact path="/Create" render={() => (
+                    <Create/>
+                        )} />
+                <Route exact path="/Rule" render={() => (
+                    <Rule/>
+                        )} />
+                <Route exact path="/visa" render={() => (
+                    <Visa/>
+                )} />
+                <Route exact path="/topicselect" render={() => (
+                    <TopicSelect/>
+                )} />
+                <Route exact path="/date" render={() => (
+                    <Date/>
+                )} />
             </Container>
         )
     }

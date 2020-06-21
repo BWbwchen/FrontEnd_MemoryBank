@@ -6,9 +6,11 @@ import {
     Link
 } from 'react-router-dom'
 import {Button} from 'reactstrap';
+import {Helmet} from 'react-helmet';
 import {
   BarChart, Bar, XAxis, CartesianGrid
 } from 'recharts';
+import { createGlobalStyle } from 'styled-components'
 import './Home.css';
 
 
@@ -20,9 +22,9 @@ export default class Home extends React.Component {
         this.state = {
             intro: "Hi! My name is John, I'm a creative geek from San Francisco, CA. Contact me at john@mail.com",
             gender:"woman", // or man
-            schedule: 0,
+            schedule: 2345,
             money: 100,
-            count: 0,
+            count: 6789,
             isTrigger: true,
         };
         this.handleClick = this.handleClick.bind(this);
@@ -41,8 +43,9 @@ export default class Home extends React.Component {
         ];
 
         return(
-            <div className="home"> 
-                <div className="text-center my-2">首頁</div>
+            <div> 
+                <Helmet bodyAttributes={{style: 'background-color :#414141'}}/>
+                <div className="text-center my-2" >首頁</div>
                 <img className="image" src={`images/${this.state.gender}.png`}/>
                 <div className="info" style={{margin:'0 0 1rem 0'}}>
                     <h4>Me</h4>
@@ -51,15 +54,15 @@ export default class Home extends React.Component {
                 <p className="info">{this.state.intro}</p>
                 <div className="my-4 d-flex justify-content-center text-center">
                     <div className="px-3 my-3 vert-r"> 
-                        <h3 >{this.state.schedule}%</h3>
+                        <h3 style={{fontFamily:'Waiting for the Sunrise, cursive'}}>{this.state.schedule}%</h3>
                         <h6>本周完成進度</h6>
                     </div>
                     <div className="px-3">
-                        <h1>${this.state.money}</h1>
+                        <h1 style={{fontFamily:'Waiting for the Sunrise, cursive'}}>$&nbsp;{this.state.money}</h1>
                         <h6>錢包金額</h6>
                     </div>
                     <div className="px-3 my-3 vert-l">
-                        <h3>{this.state.count}</h3>
+                        <h3 style={{fontFamily:'Waiting for the Sunrise, cursive'}}>{this.state.count}</h3>
                         <h6> 記憶單字數</h6>
                     </div>
                 </div>
@@ -72,10 +75,11 @@ export default class Home extends React.Component {
                 </div>
 
                 <Link className="d-flex my-2 mx-auto btn" to="/MissionList"> 
-                    <Button style={{backgroundColor: '#FF6347'}} block onClick={this.handleClick}>
+                    <Button style={{backgroundColor: '#FF6347',border:'none'}} block onClick={this.handleClick}>
                         <h6>開始今日任務</h6>
                     </Button>
                 </Link>
+
             </div>
         )
     }

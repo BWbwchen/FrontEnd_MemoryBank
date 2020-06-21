@@ -24,6 +24,9 @@ const SideBar = props => (
           <NavItem>
             <NavLink tag={Link} to='/Setting' style={{color: '#fff'}}>設定</NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink tag={Link} to='/intro' style={{color: '#fff'}}>註冊</NavLink>
+          </NavItem>          
         </Nav>        
       </div>
     </div>

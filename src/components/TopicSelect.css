@@ -1,0 +1,32 @@
+.select-false{
+    margin-bottom: 2rem;
+    width: 100%;
+    background-color: #f3a59e !important;
+    border:none !important;
+    color: white;
+}
+.select-true{
+    margin-bottom: 2rem;
+    width: 100%;
+    background-color: #FF6347 !important;
+    border:none !important;
+    color: white;
+}
+
+button:disabled {
+    background-color: #f19f91;
+    color: #333;
+  }
+  
+button {
+    display: block;
+    width: 100%;
+    appearance: none;
+    border-radius: 5px;
+    background-color: #FF6347;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    height: 40px;
+    margin-top: 30px;
+}

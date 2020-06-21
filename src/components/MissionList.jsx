@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './Card.jsx'
 import CountDown from './CountDown.jsx'
 import TextAnimation from './TextAnimation.jsx'
+import {Helmet} from 'react-helmet'
 import "./MissionList.css"
 import running from "../images/running.png";
 import {
@@ -55,6 +56,7 @@ export default class MissionList extends React.Component {
         })
         return(
             <div className="mission-list">
+                <Helmet bodyAttributes={{style: 'background-color : white'}}/>
                 <div className="text-center my-2">每日任務列表</div>
                 <div className="intro-sector">
                     <div className="filter"></div>
