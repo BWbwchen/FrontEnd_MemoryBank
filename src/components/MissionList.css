@@ -1,6 +1,3 @@
-.mission-list {
-    padding: 20px 0px 20px 0px;
-}
 .intro-sector {
     background-image: url("https://source.unsplash.com/XkKCui44iM0/1600x900");
     width: 100%;
@@ -16,7 +13,7 @@
     height: 500px;
     position: absolute;
     left: 50%;
-    top:60%;
+    top:50%;
     transform: translate(-15%, -50%);
     z-index: 3;
 }
@@ -132,10 +129,3 @@ fill: none;
 div.content.mission{
     padding: 0
 }
-
-div.container.mission{
-    padding-right: 0;
-    padding-left: 0; 
-    margin-right: 0; 
-    margin-left: 0;
-} 

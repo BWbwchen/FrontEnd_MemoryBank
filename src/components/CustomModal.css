@@ -1,0 +1,6 @@
+.modal-header .close {
+    width: 30px;
+}
+.modal-footer {
+    justify-content: center !important;
+}

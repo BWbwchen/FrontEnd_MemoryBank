@@ -35,7 +35,7 @@ export default class Rule extends React.Component {
         today = yyyy+'-'+mm+'-'+dd;
         var lastday =  (yyyy+2) +'-'+mm+'-'+dd;
         return(
-            <div className="my-5">
+            <div className="my-5 container">
                 <Helmet bodyAttributes={{style: 'background-color :#F0F0F0'}}/>
 
                 <Link  to="/topicselect"> 

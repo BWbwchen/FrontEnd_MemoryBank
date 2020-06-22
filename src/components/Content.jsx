@@ -13,6 +13,7 @@ import Rule from 'components/Rule.jsx';
 import Visa from 'components/visa.jsx';
 import TopicSelect from 'components/TopicSelect.jsx'
 import Date from 'components/Date.jsx'
+import "./Content.css"
 
 export default class Content extends React.Component {
     static propTypes = {
@@ -30,8 +31,8 @@ export default class Content extends React.Component {
             paddingLeft: '0px'
           };
         return(
-            <Container className={`content ${this.props.page}`}>
-                <div className="d-flex "> 
+            <div className={`content_ ${this.props.page}`}>
+                <div className="d-flex sidebar-icon"> 
                     <div style={{position:"fixed"}}>
                         <Button color="link" style={{color: '#FF6347'}} onClick={toggle}>
                         <i className="fa fa-align-left" aria-hidden="true"></i>
@@ -45,7 +46,7 @@ export default class Content extends React.Component {
                             <Intro/>
                         )} />
                 <Route exact path="/MissionList" render={() => (
-                            <MissionList handle_P={this.props.handle_P}/>
+                            <MissionList />
                         )} />
                 <Route exact path="/Reviewing" render={() => (
                             <Review />
@@ -68,7 +69,7 @@ export default class Content extends React.Component {
                 <Route exact path="/date" render={() => (
                     <Date/>
                 )} />
-            </Container>
+            </div>
         )
     }
 }

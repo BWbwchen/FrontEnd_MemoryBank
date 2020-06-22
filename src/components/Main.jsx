@@ -23,8 +23,8 @@ export default class Main extends React.Component {
         return (
             <Router>
                 <div className="main">
-                    <SideBar className="sidebar" handle_P={this.handlePage} toggle={this.handleNavbarToggle} isOpen={this.state.navbarToggle} />
-                    <Content handle_P={this.handlePage} page={this.state.page} toggle={this.handleNavbarToggle}/>
+                    <SideBar className="sidebar" toggle={this.handleNavbarToggle} isOpen={this.state.navbarToggle} />
+                    <Content page={this.state.page} toggle={this.handleNavbarToggle}/>
                 </div>
             </Router>
             );

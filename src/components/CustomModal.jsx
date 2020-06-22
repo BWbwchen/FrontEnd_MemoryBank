@@ -1,6 +1,6 @@
 import { Modal, Button } from 'react-bootstrap';
 import React from 'react';
-
+import "./CustomModal.css";
 export default class CustomModal extends React.Component {
     constructor(props) {
         super(props);

@@ -81,7 +81,7 @@ export default class Visa extends React.Component {
         const errors =validate(this.state.number, this.state.expiredate, this.state.cvv, this.state.name);
         const isDisabled = Object.keys(errors).some(x => errors[x]);
         return(
-            <div className="my-5" style={{color:'black'}}>
+            <div className="my-5 container" style={{color:'black'}}>
                 <Helmet bodyAttributes={{style: 'background-color :#F0F0F0'}}/>
                 <Link  to="/rule"> 
                     <Button cmeolor="link" style={{color: 'black',background:'#F0F0F0',border:'none',textAlign:'left'}}>

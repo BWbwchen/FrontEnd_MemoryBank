@@ -27,7 +27,7 @@ export default class TopicSelect extends React.Component {
     
     render(){
         return(
-            <div className="my-5">
+            <div className="my-5 container">
             <Helmet bodyAttributes={{style: 'background-color :#F0F0F0'}}/>
             <Link  to="/visa"> 
                 <Button cmeolor="link" style={{color: 'black',background:'#F0F0F0',border:'none',textAlign:'left'}}>

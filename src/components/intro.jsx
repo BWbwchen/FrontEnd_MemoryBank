@@ -22,7 +22,7 @@ export default class Intro extends React.Component {
     render(){
         return(
 
-            <div className="text-center">
+            <div className="text-center container">
                 <Helmet bodyAttributes={{style: 'background-color :#414141'}}/>
                 <div className="my-2"></div>
                 <div className="container py-5">

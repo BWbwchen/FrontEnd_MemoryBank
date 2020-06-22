@@ -56,7 +56,7 @@ export default class MissionList extends React.Component {
         })
         return(
             <div className="mission-list">
-                <div className="text-center my-2">每日任務列表</div>
+                {/* <div className="text-center my-2">每日任務列表</div> */}
                 <div className="intro-sector">
                     <div className="filter"></div>
                 </div>
@@ -102,7 +102,7 @@ export default class MissionList extends React.Component {
                                     <div className="data-title">本週已連續打卡:</div>
                                     <div className="data"> 2天 </div>
                                 </div>
-                                <Link to="/" onClick={()=>this.props.handle_P('home')}>
+                                <Link to="/">
                                     <div id="more-data-box">
                                         <div>查看更多數據 &nbsp; </div>
                                     </div>

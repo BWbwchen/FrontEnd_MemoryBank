@@ -21,7 +21,7 @@ export default class Rule extends React.Component {
     
     render(){
         return(
-            <div className="my-5 ">
+            <div className="my-5 container">
                 <Helmet bodyAttributes={{style: 'background-color :#F0F0F0'}}/>
 
                 <Link  to="/Create"> 

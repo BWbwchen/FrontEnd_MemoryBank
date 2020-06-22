@@ -16,16 +16,16 @@ const SideBar = props => (
       <div className="side-menu">
         <Nav vertical className="list-unstyled pb-3" onClick={props.toggle}>
           <NavItem>
-            <NavLink tag={Link} to='/' style={{color: '#fff'}} onClick={()=>props.handle_P('home')}>首頁</NavLink>
+            <NavLink tag={Link} to='/' style={{color: '#fff'}} >首頁</NavLink>
           </NavItem> 
           <NavItem>
-            <NavLink tag={Link} to='/MissionList' style={{color: '#fff'}} onClick={()=>props.handle_P('mission')}>單字任務列表</NavLink>
+            <NavLink tag={Link} to='/MissionList' style={{color: '#fff'}} >單字任務列表</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink tag={Link} to='/Setting' style={{color: '#fff'}} onClick={()=>props.handle_P('setting')}>設定</NavLink>
+            <NavLink tag={Link} to='/Setting' style={{color: '#fff'}} >設定</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink tag={Link} to='/intro' style={{color: '#fff'}} onClick={()=>props.handle_P('signup')}>註冊</NavLink>
+            <NavLink tag={Link} to='/intro' style={{color: '#fff'}}>註冊</NavLink>
           </NavItem>          
         </Nav>        
       </div>
