@@ -1,0 +1,12 @@
+.word{
+    display:inline;
+    color:#056571;
+}
+
+.change{
+    display: inline;
+    color:#056571;
+    text-align: right;
+    float: right;
+    border: none;
+}

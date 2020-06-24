@@ -21,13 +21,14 @@ export default class Home extends React.Component {
     
         this.state = {
             intro: "Hi! My name is John, I'm a creative geek from San Francisco, CA. Contact me at john@mail.com",
-            gender:"woman", // or man
+            gender:"venus", // or mars
             schedule: 2345,
             money: 100,
             count: 6789,
             isTrigger: true,
         };
         this.handleClick = this.handleClick.bind(this);
+        this.handleGender = this.handleGender.bind(this);
     }
 
 
@@ -43,12 +44,16 @@ export default class Home extends React.Component {
         ];
 
         return(
-            <div class="container home"> 
+            <div className="container home"> 
                 <Helmet bodyAttributes={{style: 'background-color :#414141'}}/>
                 <div className="text-center my-2" >首頁</div>
                 <img className="image" src={`images/${this.state.gender}.png`}/>
                 <div className="info" style={{margin:'0 0 1rem 0'}}>
-                    <h4>Me</h4>
+                    <h4>Me
+                        <Button style={{backgroundColor: 'transparent', border:'none', width:'1rem', boxShadow:'none'}} onClick={this.handleGender}>
+                            <i className={`fa fa-${this.state.gender}`}></i>
+                        </Button>
+                    </h4>
                     <h6>NTHU Student</h6>
                 </div>
                 <p className="info">{this.state.intro}</p>
@@ -82,6 +87,18 @@ export default class Home extends React.Component {
 
             </div>
         )
+    }
+
+    handleGender(){
+        if(this.state.gender === "venus"){
+            this.setState(state => ({
+                gender: "mars"
+            }));
+        }else{
+            this.setState(state => ({
+                gender: "venus"
+            }));
+        }
     }
 
     handleClick(){

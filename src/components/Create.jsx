@@ -98,7 +98,8 @@ export default class Create extends React.Component {
             <Container className="box search">
                 <div style={{position:"fixed"}}>
                     <Link  to="/intro"> 
-                        <Button cmeolor="link" style={{color: 'black',background:'white',border:'none'}}>
+                        <Button cmeolor="link" 
+                        style={{color: 'black',background:'white',border:'none'}}>
                         <i className="fa fa-arrow-left"></i>
                         </Button>
                     </Link>

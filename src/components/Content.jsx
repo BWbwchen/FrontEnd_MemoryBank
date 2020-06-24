@@ -13,6 +13,7 @@ import Rule from 'components/Rule.jsx';
 import Visa from 'components/visa.jsx';
 import TopicSelect from 'components/TopicSelect.jsx'
 import Date from 'components/Date.jsx'
+import Setting from 'components/setting.jsx'
 import "./Content.css"
 
 export default class Content extends React.Component {
@@ -65,6 +66,9 @@ export default class Content extends React.Component {
                 )} />
                 <Route exact path="/topicselect" render={() => (
                     <TopicSelect/>
+                )} />
+                <Route exact path="/Setting" render={() => (
+                    <Setting/>
                 )} />
                 <Route exact path="/date" render={() => (
                     <Date/>
