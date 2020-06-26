@@ -1,8 +1,7 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     BrowserRouter as Router,
-    Route,
     Link
 } from 'react-router-dom'
 import {Button} from 'reactstrap';
@@ -10,9 +9,8 @@ import {Helmet} from 'react-helmet';
 import {
   BarChart, Bar, XAxis, CartesianGrid
 } from 'recharts';
-import { createGlobalStyle } from 'styled-components'
 import './Home.css';
-
+import {getName} from 'api/get.js';
 
 export default class Home extends React.Component {
     
@@ -22,6 +20,7 @@ export default class Home extends React.Component {
         this.state = {
             intro: "Hi! My name is John, I'm a creative geek from San Francisco, CA. Contact me at john@mail.com",
             gender:"venus", // or mars
+            name:"John Doe",
             schedule: 2345,
             money: 100,
             count: 6789,
@@ -54,7 +53,7 @@ export default class Home extends React.Component {
                             <i className={`fa fa-${this.state.gender}`}></i>
                         </Button>
                     </h4>
-                    <h6>NTHU Student</h6>
+                    <h6>{this.state.name}</h6>
                 </div>
                 <p className="info">{this.state.intro}</p>
                 <div className="my-4 d-flex justify-content-center text-center">

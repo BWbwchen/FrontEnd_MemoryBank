@@ -32,10 +32,7 @@ export default class Setting extends React.Component {
     handleChange = evt => {
         this.setState({notice: event.target.value});
       }
-
-      SaveChange = evt =>{
-          alert("已更新!")
-      }
+      
     render(){
         return(
             <div className="container home">
@@ -49,28 +46,25 @@ export default class Setting extends React.Component {
 
                     </ListGroupItem>
                     <ListGroupItem className="my-2">
-                        <i className="fa fa-gear " aria-hidden="true"></i>
+                        <i className="fa fa-bell " style={{textAlign:'left', fontSize:'13.72px'}}aria-hidden="true"></i>
                         <p className="word">&nbsp;&nbsp;通知</p>
                         <select className="change" value={this.state.notice} onChange={this.handleChange}>
                             <option value="On">On</option>
                             <option value="Off">Off</option>
                         </select>
                     </ListGroupItem>
-                    <ListGroupItem className="my-2">
-                        <i className="fa fa-bell" style={{fontSize:'13.72px'}}aria-hidden="true"></i>
-                        <p className="word">&nbsp;&nbsp;一般</p>
-                        </ListGroupItem>
+                    <Link to="/" style={{textDecoration:'none'}}>
+                        <button className="my-2 setting">
+                            <i className="fa fa-gear " style={{color:'black'}} aria-hidden="true"></i>
+                            <p className="word">&nbsp;&nbsp;一般</p>
+                        </button>
+                    </Link>
                     <ListGroupItem className="my-2">
                         <i className="fa fa-user " aria-hidden="true"></i>
                         <p className="word">&nbsp;&nbsp;帳號</p>
                         <input type="text" className="change" value={this.state.email} onChange={this.handleMailChange} />
                     </ListGroupItem>
                 </ListGroup>
-                <div className="d-flex my-2 mx-auto btn" style={{padding:'0', border:'none'}} > 
-                <Button style={{border:'none',margin:'0', padding:'0'}} block onClick={this.SaveChange} >
-                    Save
-                </Button>
-            </div>
             </div>
         )
     }
