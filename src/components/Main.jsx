@@ -13,10 +13,10 @@ export default class Main extends React.Component {
 
         this.state = {
             navbarToggle: false,
-            page:'',
+            userId:"",
         };
         this.handleNavbarToggle = this.handleNavbarToggle.bind(this);
-        this.handlePage = this.handlePage.bind(this);
+        this.handleUserid = this.handleUserid.bind(this);
     }
 
     render(){
@@ -24,14 +24,16 @@ export default class Main extends React.Component {
             <Router>
                 <div className="main">
                     <SideBar className="sidebar" toggle={this.handleNavbarToggle} isOpen={this.state.navbarToggle} />
-                    <Content page={this.state.page} toggle={this.handleNavbarToggle}/>
+                    <Content toggle={this.handleNavbarToggle} IdFunc={this.handleUserid} UserId={this.state.userId}/>
                 </div>
             </Router>
             );
     }
-    handlePage(page_name){
+    
+    handleUserid(Id){
+        console.log('get UserId')
         this.setState(() => ({
-            page: page_name
+            userId: Id
         }));
     }
     handleNavbarToggle() {

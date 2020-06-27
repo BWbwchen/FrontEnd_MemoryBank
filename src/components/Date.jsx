@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 import {Button, Container} from 'reactstrap';
 import { Helmet } from 'react-helmet';
-
+import axios from 'axios';
 
 export default class Rule extends React.Component {
 
@@ -15,10 +15,23 @@ export default class Rule extends React.Component {
     
         this.state = {
             button_disable:true,
+            date:""
         };
         this.handleClick = this.handleClick.bind(this);
     }
 
+    handleClick(date){
+        var that = this
+        let url = `....`;
+
+        axios.get(url).then(function(res) {
+            const ID = res.data.user_id
+            // that.props.IdFunc(ID)
+            that.props.IdFunc("123123")
+        }).catch((err) => {
+            console.log(err)
+        });
+    }
     
     render(){
         var today = new Date();
@@ -47,12 +60,13 @@ export default class Rule extends React.Component {
                     <h1 className="my-2" style={{overflow:'hidden'}}> 完成背誦單字日期</h1>
                     <div className="date">
                         <p>Dates</p>
-                        <input onChange={this.handleClick} type="date" id="myDate"  min={today} max={lastday} required/>
+                        <input onChange={this.handleChange} type="date" id="myDate"  min={today} max={lastday} required/>
                     </div>
 
                 </Container>
-                <Link className="d-flex my-2 mx-auto btn" style={{padding:'0', border:'none'}}  to="/"> 
-                    <Button disabled={this.state.button_disable}  style={{backgroundColor: '#414141',border:'none',margin:'0', padding:'0'}}  >
+                <Link className="d-flex my-2 mx-auto btn" style={{padding:'0', border:'none'}}  to="/Home"> 
+                    <Button onClick={()=> this.handleClick(this.state.date)}
+                           disabled={this.state.button_disable}  style={{backgroundColor: '#414141',border:'none',margin:'0', padding:'0'}}  >
                         完成
                     </Button>
                 </Link>
@@ -60,10 +74,12 @@ export default class Rule extends React.Component {
             </div>
         )
     }
-    handleClick(){
-        console.log('here')
-        this.setState(state => ({
+
+    handleChange = evt => {
+        this.setState({ 
+            date: evt.target.value,
             button_disable:false,
-        }));
-    }
+
+        });
+    };    
 }

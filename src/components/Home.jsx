@@ -10,7 +10,10 @@ import {
   BarChart, Bar, XAxis, CartesianGrid
 } from 'recharts';
 import './Home.css';
-// import {getName} from 'api/get.js';
+import {getinfo} from 'api/get.js';
+import axios from 'axios';
+
+const Url = 'http://140.114.87.70:3000';
 
 export default class Home extends React.Component {
     
@@ -23,6 +26,7 @@ export default class Home extends React.Component {
             name:"John Doe",
             schedule: 2345,
             money: 100,
+            user_id:"",
             count: 6789,
             isTrigger: true,
         };
@@ -30,6 +34,30 @@ export default class Home extends React.Component {
         this.handleGender = this.handleGender.bind(this);
     }
 
+
+    componentDidMount() {
+        console.log('1',this.props.UserId)
+        let url = `${Url}/get/info?user_id?user_id=abdeb059-549a-44cf-9f21-5a3191493bb1`;
+        axios.get(url).then(res => {
+          this.setState({ 
+              name:res.data.user_id,
+              money:res.data.money,
+            });
+        })
+    }
+
+    componentWillReceiveProps(nextProps) {
+
+        console.log('2',nextProps.UserId)
+        let url = `${Url}/get/info?user_id?user_id=abdeb059-549a-44cf-9f21-5a3191493bb1`;
+        // let url = `${Url}/get/info?user_id?user_id=${this.props.UserId}`;
+        axios.get(url).then(res => {
+          this.setState({ 
+              name:res.data.user_id,
+              money:res.data.money,
+            });
+        })
+    }
 
     render(){
         const data = [
@@ -89,6 +117,7 @@ export default class Home extends React.Component {
     }
 
     handleGender(){
+
         if(this.state.gender === "venus"){
             this.setState(state => ({
                 gender: "mars"

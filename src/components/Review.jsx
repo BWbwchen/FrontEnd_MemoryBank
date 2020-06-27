@@ -63,8 +63,8 @@ export default class Review extends React.Component {
         })
         return(
             <>
-            <div className="review-block">
-                <div className="wrap" onClick={this.handleCloseCard}>
+            <div className="review-block" >
+                <div className="wrap" onClick={this.handleCloseCard} style={{marginTop:'20rem'}}>
                     <div className="trigger" onClick={this.handleTrigger}></div>
                     <div className="inner-wrap">
                         <div className="cards" style={this.state.cards_rotate_style}>
@@ -74,7 +74,7 @@ export default class Review extends React.Component {
                 </div>
                 <Link to="/Challenging">
                     <div id="more-data-box">
-                        <div>完成今日挑戰  &nbsp; > </div>
+                        <div style={{color: 'black'}}>完成今日挑戰  &nbsp; </div>
                     </div>
                 </Link>
             </div>

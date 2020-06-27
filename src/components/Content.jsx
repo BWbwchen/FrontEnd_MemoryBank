@@ -14,6 +14,7 @@ import Visa from 'components/visa.jsx';
 import TopicSelect from 'components/TopicSelect.jsx'
 import Date from 'components/Date.jsx'
 import ChallengeResult from 'components/ChallengeResult.jsx'
+import SideBtn from 'components/ShowSideBtn.jsx'
 import Setting from 'components/setting.jsx'
 import "./Content.css"
 
@@ -33,34 +34,43 @@ export default class Content extends React.Component {
             paddingLeft: '0px'
           };
         return(
-            <div className={`content_ ${this.props.page}`}>
-                <div className="d-flex sidebar-icon"> 
-                    <div style={{position:"fixed"}}>
-                        <Button color="link" style={{color: '#FF6347'}} onClick={toggle}>
-                        <i className="fa fa-align-left" aria-hidden="true"></i>
-                        </Button>
-                    </div>
-                </div>
+            <div className={`content_ `}>
+
                 <Route exact path="/" render={() => (
-                            <Intro/>
+                            <Intro IdFunc={this.props.IdFunc} />
                         )} />
                 <Route exact path="/home" render={() => (
-                            <Home/>
+                            <div>
+                                <SideBtn toggle={toggle}/>
+                                <Home UserId={this.props.UserId} />
+                            </div>
                         )} />
                 <Route exact path="/MissionList" render={() => (
-                            <MissionList />
+                            <div>
+                                <SideBtn toggle={toggle}/>
+                                <MissionList />
+                            </div>
                         )} />
                 <Route exact path="/Reviewing" render={() => (
-                            <Review />
+                            <div>
+                                <SideBtn toggle={toggle}/>
+                                <Review />
+                            </div>
                         )} />
                 <Route exact path="/Challenging" render={() => (
-                            <Challenge />
+                            <div>
+                               <SideBtn toggle={toggle}/>
+                                <Challenge />
+                            </div>
                         )} />
                 <Route exact path="/ChallengeResult" render={() => (
-                            <ChallengeResult />
+                            <div>
+                                <SideBtn toggle={toggle}/>
+                                <ChallengeResult />
+                            </div>
                         )} />
                 <Route exact path="/Create" render={() => (
-                    <Create/>
+                    <Create />
                         )} />
                 <Route exact path="/Rule" render={() => (
                     <Rule/>
@@ -72,10 +82,13 @@ export default class Content extends React.Component {
                     <TopicSelect/>
                 )} />
                 <Route exact path="/Setting" render={() => (
-                    <Setting/>
+                    <div>
+                        <SideBtn toggle={toggle}/>
+                        <Setting/>
+                    </div>
                 )} />
                 <Route exact path="/date" render={() => (
-                    <Date/>
+                    <Date IdFunc={this.props.IdFunc}/>
                 )} />
 
             </div>

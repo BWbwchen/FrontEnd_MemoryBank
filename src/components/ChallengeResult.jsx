@@ -33,7 +33,7 @@ class ChallengeResult extends React.Component {
                 </div>
                 <Link to="/MissionList">
                     <div className="return-mission">
-                        <div>返回任務列表  &nbsp; > </div>
+                        <div>返回任務列表  &nbsp;  </div>
                     </div>
                 </Link>
             </div>
