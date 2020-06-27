@@ -10,7 +10,7 @@ import {
   BarChart, Bar, XAxis, CartesianGrid
 } from 'recharts';
 import './Home.css';
-import {getName} from 'api/get.js';
+// import {getName} from 'api/get.js';
 
 export default class Home extends React.Component {
     
