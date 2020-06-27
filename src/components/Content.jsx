@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Container,Button } from 'reactstrap';
+import { Button } from 'reactstrap';
 import { Route } from 'react-router-dom';
 import Home from 'components/Home.jsx';
 import MissionList from 'components/MissionList.jsx';
@@ -42,10 +42,10 @@ export default class Content extends React.Component {
                     </div>
                 </div>
                 <Route exact path="/" render={() => (
-                            <Home/>
-                        )} />
-                <Route exact path="/intro" render={() => (
                             <Intro/>
+                        )} />
+                <Route exact path="/home" render={() => (
+                            <Home/>
                         )} />
                 <Route exact path="/MissionList" render={() => (
                             <MissionList />
@@ -77,6 +77,7 @@ export default class Content extends React.Component {
                 <Route exact path="/date" render={() => (
                     <Date/>
                 )} />
+
             </div>
         )
     }

@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./Create.css";
 import { 
     Container,
@@ -97,7 +96,7 @@ export default class Create extends React.Component {
 
             <Container className="box search">
                 <div style={{position:"fixed"}}>
-                    <Link  to="/intro"> 
+                    <Link  to="/"> 
                         <Button cmeolor="link" 
                         style={{color: 'black',background:'white',border:'none'}}>
                         <i className="fa fa-arrow-left"></i>
