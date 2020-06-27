@@ -1,8 +1,7 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     BrowserRouter as Router,
-    Route,
     Link
 } from 'react-router-dom'
 import {Button} from 'reactstrap';
@@ -10,9 +9,8 @@ import {Helmet} from 'react-helmet';
 import {
   BarChart, Bar, XAxis, CartesianGrid
 } from 'recharts';
-import { createGlobalStyle } from 'styled-components'
 import './Home.css';
-
+import {getName} from 'api/get.js';
 
 export default class Home extends React.Component {
     
@@ -21,13 +19,15 @@ export default class Home extends React.Component {
     
         this.state = {
             intro: "Hi! My name is John, I'm a creative geek from San Francisco, CA. Contact me at john@mail.com",
-            gender:"woman", // or man
+            gender:"venus", // or mars
+            name:"John Doe",
             schedule: 2345,
             money: 100,
             count: 6789,
             isTrigger: true,
         };
         this.handleClick = this.handleClick.bind(this);
+        this.handleGender = this.handleGender.bind(this);
     }
 
 
@@ -48,8 +48,12 @@ export default class Home extends React.Component {
                 <div className="text-center my-2" >首頁</div>
                 <img className="image" src={`images/${this.state.gender}.png`}/>
                 <div className="info" style={{margin:'0 0 1rem 0'}}>
-                    <h4>Me</h4>
-                    <h6>NTHU Student</h6>
+                    <h4>Me
+                        <Button style={{backgroundColor: 'transparent', border:'none', width:'1rem', boxShadow:'none'}} onClick={this.handleGender}>
+                            <i className={`fa fa-${this.state.gender}`}></i>
+                        </Button>
+                    </h4>
+                    <h6>{this.state.name}</h6>
                 </div>
                 <p className="info">{this.state.intro}</p>
                 <div className="my-4 d-flex justify-content-center text-center">
@@ -82,6 +86,18 @@ export default class Home extends React.Component {
 
             </div>
         )
+    }
+
+    handleGender(){
+        if(this.state.gender === "venus"){
+            this.setState(state => ({
+                gender: "mars"
+            }));
+        }else{
+            this.setState(state => ({
+                gender: "venus"
+            }));
+        }
     }
 
     handleClick(){

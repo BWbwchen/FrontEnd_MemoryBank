@@ -17,6 +17,17 @@
     text-align: center;
 }
 
+.fa-venus{
+    background-color: transparent;
+    color: red
+}
+
+
+.fa-mars{
+    background-color: transparent;
+    color: blue
+}
+
 .vert-r{
     border-right: solid 0.1rem rgba(255, 255, 255);
 }

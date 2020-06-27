@@ -13,7 +13,11 @@ import Rule from 'components/Rule.jsx';
 import Visa from 'components/visa.jsx';
 import TopicSelect from 'components/TopicSelect.jsx'
 import Date from 'components/Date.jsx'
+<<<<<<< HEAD
 import ChallengeResult from 'components/ChallengeResult.jsx'
+=======
+import Setting from 'components/setting.jsx'
+>>>>>>> c1f77ca637fc7b21353e13043ad202404792cd3a
 import "./Content.css"
 
 export default class Content extends React.Component {
@@ -69,6 +73,9 @@ export default class Content extends React.Component {
                 )} />
                 <Route exact path="/topicselect" render={() => (
                     <TopicSelect/>
+                )} />
+                <Route exact path="/Setting" render={() => (
+                    <Setting/>
                 )} />
                 <Route exact path="/date" render={() => (
                     <Date/>
