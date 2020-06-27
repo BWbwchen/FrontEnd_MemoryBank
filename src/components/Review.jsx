@@ -1,6 +1,11 @@
 import React from 'react';
 import './Review.css'
 import ReviewCard from "./ReviewCard.jsx"
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom'
 export default class Review extends React.Component {
     constructor(props) {
         super(props);
@@ -67,6 +72,11 @@ export default class Review extends React.Component {
                         </div>
                     </div>
                 </div>
+                <Link to="/Challenging">
+                    <div id="more-data-box">
+                        <div>完成今日挑戰  &nbsp; > </div>
+                    </div>
+                </Link>
             </div>
             </>
         )

@@ -1,0 +1,26 @@
+#videoNoShow {
+    transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    display: none !important;
+  }
+  .canvas-block {
+      width: 100%;
+  }
+  .webcam {
+      position: absolute;
+  }
+  .question-discription {
+      position: absolute;
+      margin-top: 2rem;
+  }
+  .ready-countdown {
+      position: absolute;
+  }
+  .is-none {
+      display: none;
+  }
+  .is-display {
+      display: block;
+  }

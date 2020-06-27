@@ -43,7 +43,7 @@ export default class Home extends React.Component {
         ];
 
         return(
-            <div class="container home"> 
+            <div className="container home"> 
                 <Helmet bodyAttributes={{style: 'background-color :#414141'}}/>
                 <div className="text-center my-2" >首頁</div>
                 <img className="image" src={`images/${this.state.gender}.png`}/>

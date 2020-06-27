@@ -14,7 +14,7 @@ module.exports = {
         }
     },
     entry: {
-        index: './index.jsx',
+        index: ['babel-polyfill', './index.jsx'] ,
         vendor: ['react', 'react-dom']
     },
     output: {
@@ -85,7 +85,7 @@ module.exports = {
     devServer: {
         contentBase: distPath,
         compress: true,
-        port: 8888,
+        port: 8080,
         historyApiFallback: true,
     },
     devtool: 'cheap-source-map'

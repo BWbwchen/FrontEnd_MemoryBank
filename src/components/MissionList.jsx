@@ -5,6 +5,7 @@ import TextAnimation from './TextAnimation.jsx'
 import {Helmet} from 'react-helmet'
 import "./MissionList.css"
 import running from "../images/running.png";
+import axios from 'axios';
 import {
     BrowserRouter as Router,
     Route,
@@ -42,6 +43,13 @@ export default class MissionList extends React.Component {
                 {type: "pastCard",date: "06/22",completeRate: 0, image: "https://source.unsplash.com/FHnnjk1Yj7Y/1600x900"},
             ]
         };
+    }
+    componentDidMount() {
+        var url = 'http://140.114.87.70:3000/get/info?user_id=d9786825-0f15-4064-8715-7a59ac9bf979'
+        axios.get(url).then(function(res) {
+            console.log(res)
+        }).catch(function(err) {
+        });
     }
     render(){
         const weeklyCardList = this.state.weeklyCards.map(function(item){
