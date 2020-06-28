@@ -44,7 +44,7 @@ export default class Intro extends React.Component {
     
     click(user, password) {
         var that = this
-        let url = `${Url}/get/info?user_id=${user}/${password}`;
+        let url = `${Url}/api/get/login?email=${user}&&password=${password}`;
         console.log(`Making GET request to: ${url}`);
 
         axios.get(url).then(function(res) {
